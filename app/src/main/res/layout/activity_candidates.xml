@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Candidates"
+    android:background="@drawable/bg_ui">
+
+    <EditText
+        android:id="@+id/t3"
+        android:layout_width="288dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="74dp"
+        android:ems="10"
+        android:fontFamily="@font/gothic"
+        android:gravity="start|top"
+        android:hint="Enter Party"
+        android:inputType="text"
+        android:textColor="@color/celadonBlue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <EditText
+        android:id="@+id/t2"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:fontFamily="@font/gothic"
+        android:hint="Enter Constituency"
+        android:inputType="textPersonName"
+        android:textColor="@color/celadonBlue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
+
+    <EditText
+        android:id="@+id/t1"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="textPersonName"
+        android:fontFamily="@font/gothic"
+        android:textColor="@color/celadonBlue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106" />
+
+
+    <EditText
+        android:id="@+id/t4"
+        android:layout_width="290dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:fontFamily="@font/gothic"
+        android:hint="Enter Link To Speech"
+        android:inputType="textPersonName"
+        android:textColor="@color/celadonBlue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:id="@+id/btnChoose"
+        android:layout_width="130dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="45dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/imperialRed"
+        android:fontFamily="@font/gothicb"
+        android:gravity="center"
+        android:text="CHOOSE"
+        android:textColor="@color/honeyDew"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toStartOf="@+id/imgView"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t4"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="130dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="45dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/imperialRed"
+        android:fontFamily="@font/gothicb"
+        android:gravity="center"
+        android:text="UPLOAD"
+        android:textColor="@color/honeyDew"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toStartOf="@+id/imgView"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t4"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="102dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t4"
+        android:background="@mipmap/ic_photo"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="@color/imperialRed"
+        android:fontFamily="@font/gothicb"
+        android:text="SUBMIT"
+        android:textColor="@color/honeyDew"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t2"
+        app:layout_constraintVertical_bias="0.905" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

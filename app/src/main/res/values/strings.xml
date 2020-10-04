@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">VotingApp</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string-array name="states">
+        <item>Delhi</item>
+        <item>Maharashtra</item>
+        <item>Uttar Pradesh</item>
+        <item>Bihar</item>
+        <item>Madhya Pradesh</item>
+        <item>West Bengal</item>
+        <item>Assam</item>
+        <item>Tamil Nadu</item>
+    </string-array>
+    <string-array name="candidates">
+        <item>BJP</item>
+        <item>Congress</item>
+        <item>AAP</item>
+        <item>JD(U)</item>
+        <item>BSP</item>
+        <item>Shivsena</item>
+    </string-array>
+</resources>
