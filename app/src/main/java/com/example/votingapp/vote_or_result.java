@@ -15,7 +15,7 @@ public class vote_or_result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote_or_result);
         Button vote=(Button)findViewById(R.id.vote);
-        Button result=(Button)findViewById(R.id.result);
+        final Button result=(Button)findViewById(R.id.result);
         Button candidate=(Button)findViewById(R.id.candidateView);
         candidate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +33,8 @@ public class vote_or_result extends AppCompatActivity {
         result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Result will be available only after elections are over",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),result.class));
+                //Toast.makeText(getApplicationContext(),"Result will be available only after elections are over",Toast.LENGTH_SHORT).show();
             }
         });
     }
