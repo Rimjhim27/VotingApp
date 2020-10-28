@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String dob;
     ArrayAdapter<String> adapter;
     Spinner state;
+    User user;
+    FirebaseUser fUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         pd=(EditText)findViewById(R.id.password);
         pC=(EditText)findViewById(R.id.passwordC);
         mAuth=FirebaseAuth.getInstance();
+        user=new User();
 
         Button btn1=(Button)findViewById(R.id.register);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -84,14 +87,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 emailid=eid.getText().toString();
                 dob=birth.getText().toString();
 
+                fUser=mAuth.getCurrentUser();
+                user.setUserId(fUser.getUid());
+
                 Voters vote=new Voters();
                 vote.setName(name);
                 vote.setEmailId(emailid);
                 vote.setVoterId(voterid);
                 vote.setDOB(dob);
                 vote.setState(v_state);
-                DatabaseReference mDbRef = FirebaseDatabase.getInstance().getReference().child("Voters");
-                mDbRef.child(voterid).setValue(vote);
+                DatabaseReference mDbRef = FirebaseDatabase.getInstance().getReference();
+                mDbRef.child("Users").child(fUser.getUid()).setValue(user);
+                mDbRef.child("Voters").child(voterid).setValue(vote);
 
                 mAuth.createUserWithEmailAndPassword(emailid,pword).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override

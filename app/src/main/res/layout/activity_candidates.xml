@@ -91,10 +91,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toStartOf="@+id/imgView"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t4"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.361" />
 
     <Button
         android:id="@+id/btnUpload"
@@ -110,21 +110,22 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toStartOf="@+id/imgView"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t4"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="0.776" />
 
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="102dp"
         android:layout_height="110dp"
+        android:background="@mipmap/ic_photo"
         app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t4"
-        android:background="@mipmap/ic_photo"/>
+        app:layout_constraintVertical_bias="0.617" />
 
     <Button
         android:id="@+id/submit"
@@ -144,9 +145,9 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t2"
-        app:layout_constraintVertical_bias="0.905" />
+        app:layout_constraintVertical_bias="0.917" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

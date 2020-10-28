@@ -7,16 +7,7 @@
     tools:context=".ViewCandidates"
     android:background="@drawable/bg_ui">
 
-    <Spinner
-        android:id="@+id/dropdown"
-        android:layout_width="371dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
+
 
     <TextView
         android:id="@+id/textView5"
@@ -24,7 +15,7 @@
         android:layout_height="37dp"
         android:fontFamily="@font/gothic"
         android:gravity=""
-        android:text="Choose Your Party"
+        android:text="Candidates:"
         android:textColor="@color/celadonBlue"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/dropdown"
@@ -35,30 +26,15 @@
         app:layout_constraintVertical_bias="0.409" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="394dp"
         android:id="@+id/rView1"
-        android:layout_height="467dp"
+        android:layout_width="408dp"
+        android:layout_height="643dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pView" />
-
-    <Button
-        android:id="@+id/pView"
-        android:layout_width="407dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:backgroundTint="@color/imperialRed"
-        android:fontFamily="@font/gothicb"
-        android:text="View Candidates"
-        android:textColor="@color/honeyDew"
-        android:textSize="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dropdown"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.45" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

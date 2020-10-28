@@ -8,11 +8,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.Continuation;
@@ -21,6 +23,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.core.Context;
@@ -40,6 +43,8 @@ public class Candidates extends AppCompatActivity {
     Candidate c=new Candidate();
     private ImageView imageView;
     DatabaseReference mDbRef;
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
 
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST = 71;
@@ -59,6 +64,8 @@ public class Candidates extends AppCompatActivity {
         imageView=(ImageView)findViewById(R.id.imgView);
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+        mAuth=FirebaseAuth.getInstance();
+        mUser=mAuth.getCurrentUser();
 
         btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +93,9 @@ public class Candidates extends AppCompatActivity {
                 c.setParty(pp);
                 c.setFile(file);
                 mDbRef = FirebaseDatabase.getInstance().getReference().child("Candidate");
-                mDbRef.child(name).setValue(c);
 
+                    mDbRef.child(name).setValue(c);
+                    startActivity(new Intent(getApplicationContext(), ThankYou.class));
             }
         });
     }
@@ -142,6 +150,7 @@ public class Candidates extends AppCompatActivity {
                     if(task.isSuccessful()){
                         Uri downloadUri = task.getResult();
                         addPhotoToDatabase(downloadUri.toString());
+                        Toast.makeText(Candidates.this, "Upload successful", Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -156,9 +165,8 @@ public class Candidates extends AppCompatActivity {
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
-                                    .getTotalByteCount());
-                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                            mProgressBar.setProgress((int) progress);
                         }
                     });*/
         }
